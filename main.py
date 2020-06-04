@@ -1,13 +1,19 @@
 from Writer import *
 from Scanner import *
+from Searcher import *
 import os
 
 writer = Writer()
 
 if writer.canWrite:
-    scanner = Scanner("Helpers.h")
+    searcher = Searcher()
 
-    for info in scanner.GetDocumentation():
-        writer.WriteDoc(scanner.GetHeader(), info[0], info[1])
+    for file in searcher.ListRobotCFiles(searcher.rootDirectory):
+        scanner = Scanner(file)
+
+        for info in scanner.GetDocumentation():
+            writer.WriteDoc(scanner.GetHeader(), info[0], info[1])
+
+
 
     writer.SaveChanges()

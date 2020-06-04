@@ -18,7 +18,10 @@ class Scanner:
             "PIDInfo ",
             "short ",
             "bool ",
-            ";"
+            ";",
+            "task",
+            "ubyte",
+            "byte"
         ]
 
         if self.canScan:
