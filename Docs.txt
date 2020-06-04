@@ -1,10 +1,12 @@
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   ResetEncoders(); // Reset chassis' encoder's value to zero. Useful for preventing integer overflow.
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   void ResetEncoders(); // Reset chassis' encoder's value to zero. Useful for preventing integer overflow. 
 
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Clamp(value); //  Clamps values down to -127 and 127. Used for motor speed.
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Clamp(value); // Clamps values down to -127 and 127. Used for motor speed. 
 
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Step(original, step, target); // "Steps" towards a value by a maximum amount.
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Step(original, step, target); // "Steps" towards a value by a maximum amount. 
 
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SlewStep(original, step, target); // "Steps" towards a value if the target's value's is faster  than the original. Used for slew controller.
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SlewStep(original, step, target); // "Steps" towards a value if the target's value's is faster  than the original. Used for slew controller. 
 
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   HasReached(encoderPort, value); // Tells you whether or not an encoder has reached a threshold.
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   HasReached(encoderPort, value); // Tells you whether or not an encoder has reached a threshold. 
+
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   BothHasReached(encoder1, encoder2, value); // Tells you whether or not two encoders have reached a threshold. Used by PID controller. 
 
