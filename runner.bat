@@ -1,2 +1,2 @@
-cd C:\Users\smart\Desktop\RobotCLibrary\RobotCDocs
-python Document.py
+cd C:\Users\smart\Desktop\RobotCDocs
+python main.py

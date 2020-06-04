@@ -1561,11 +1561,21 @@ Build Option,                 Variables,          ,              feat_NaturalLan
 
 
 
+Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,    LeftArcadeControl(); // Arcade control with the left joystick. Supports slewing motors. 
+
+Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,    RightArcadeControl(); // Arcade control with the right joystick. Supports slewing motors. 
+
+Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,    CustomTankControl(); // Tank control with slewing support. 
+
+Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,    GamerControl(); // Control the chassis like a video game car! Supports slewing motors. 
+
+Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   PIDCalculate(encoderValue, target, PIDInfo* info )                // Calculate motor speed using PID; // Calculate the motor speed of a motor given its encoder and information. 
+
 Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   void SetSlewStep( step); // Set maximum slew step of the slew controller. Slewing ffected by SetTaskDelay(). 
 
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   void SetLeftMotor(port); // Set the motor port of the left motor. Needed for library to fucntion properly. 
+Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   void SetLeftMotor(port); // Set the motor port of the left motor. Needed for library to function properly. 
 
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   void SetRightMotor(port); // Set the motor port of the right motor. Needed for library to fucntion properly. 
+Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   void SetRightMotor(port); // Set the motor port of the right motor. Needed for library to function properly. 
 
 Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   void SetLeftEncoder(tSensors port); // Set the sensor port of the left encoder. Needed for PID controller to function properly. 
 
