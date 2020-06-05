@@ -1,7 +1,5 @@
 from Writer import *
-from Scanner import *
 from Searcher import *
-import os
 
 writer = Writer()
 
@@ -12,6 +10,7 @@ if writer.canWrite:
         scanner = Scanner(file)
 
         for info in scanner.GetDocumentation():
+            print((scanner.GetHeader(), info[0], info[1]))
             writer.WriteDoc(scanner.GetHeader(), info[0], info[1])
 
 

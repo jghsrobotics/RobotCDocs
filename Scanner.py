@@ -19,9 +19,10 @@ class Scanner:
             "short ",
             "bool ",
             ";",
-            "task",
-            "ubyte",
-            "byte"
+            "task ",
+            "ubyte ",
+            "byte ",
+            "void "
         ]
 
         if self.canScan:
@@ -57,6 +58,7 @@ class Scanner:
     def GetDocumentation(self):
         if self.canScan:
             scanning = False
+            insideComment = False
             desc = ""
 
             for line in self.lines:
@@ -65,6 +67,7 @@ class Scanner:
                 # Start scan if a comment appears
                 if '/*' in line:
                     scanning = True
+                    insideComment = True
 
                 if scanning:
                     # Skip header
@@ -73,7 +76,7 @@ class Scanner:
                         continue
 
                     # Else, try to report data and reset
-                    elif self.HasType(line):
+                    elif self.HasType(line) and not insideComment:
                         yield (self.StripFunction(line), desc)
                         desc = ""
                         scanning = False
@@ -81,6 +84,9 @@ class Scanner:
                     # Otherwise, add to description instead
                     elif len(line) > 3:
                         desc += self.StripDescription(line)
+
+                if '*/' in line:
+                    insideComment = False
         else:
             yield []
 
