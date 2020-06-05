@@ -10,8 +10,8 @@ if writer.canWrite:
         scanner = Scanner(file)
 
         for info in scanner.GetDocumentation():
-            print((scanner.GetHeader(), info[0], info[1]))
-            writer.WriteDoc(scanner.GetHeader(), info[0], info[1])
+            print((info[0], info[1], info[2]))
+            writer.WriteDoc(info[0], info[1], info[2])
 
 
 

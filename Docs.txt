@@ -6,9 +6,21 @@ Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noF
 
 Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GamerControl(); // Control the chassis like a video game car! Supports slewing motors. 
 
-Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   PIDCalculate(encoderValue, target, PIDInfo* info )                // Calculate motor speed using PID; // Calculate the motor speed of a motor given its encoder and information. 
+Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   PIDCalculate(encoderValue, target, PIDInfo* info ); // Calculate the motor speed of a motor given its encoder and information. 
+
+Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Slew(); // Passively slews all motors. Should be run after InitSlew(). 
+
+Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetMotorSlew(port, speed); // Set the slew value of a motor. This value will be slowly approached by the slew controller. 
+
+Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   InitSlew(); // Initialize slew controller variables. Should be run before using Slew(). 
+
+Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   AllowSlew(port); // Allows a motor port to slew. By default, all motors aren't slewed. 
+
+Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   CanSlew(port); // Returns whether or not a motor is being slewed or not. 
 
 Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetSlewStep(step); // Set maximum slew step of the slew controller. Slewing ffected by SetTaskDelay(). 
+
+Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetSlewStep(); // Get the maximum slew step of the slew controller. 
 
 Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetLeftMotor(port); // Set the motor port of the left motor. Needed for library to function properly. 
 

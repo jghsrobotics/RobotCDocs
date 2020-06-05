@@ -61,6 +61,8 @@ class Scanner:
             insideComment = False
             desc = ""
 
+            header = self.GetHeader()
+
             for line in self.lines:
                 line = line.strip()
 
@@ -75,9 +77,13 @@ class Scanner:
                         scanning = False
                         continue
 
+                    if '[SETUP]' in line:
+                        header = 'Setup'
+
                     # Else, try to report data and reset
                     elif self.HasType(line) and not insideComment:
-                        yield (self.StripFunction(line), desc)
+                        yield (header, self.StripFunction(line), desc)
+                        header = self.GetHeader()
                         desc = ""
                         scanning = False
 
