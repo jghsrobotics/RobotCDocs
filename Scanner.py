@@ -11,7 +11,7 @@ class Scanner:
         self.lines = []
         self.types = [
             "tMotor ",
-            "tSensor ",
+            "tSensors ",
             "int ",
             "float ",
             "double ",
