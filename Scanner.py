@@ -81,8 +81,8 @@ class Scanner:
                         header = 'Setup'
 
                     # Else, try to report data and reset
-                    elif self.HasType(line) and not insideComment:
-                        yield (header, self.StripFunction(line), desc)
+                    elif ';' in line and not insideComment:
+                        yield (header, self.StripTypes(line), desc)
                         header = self.GetHeader()
                         desc = ""
                         scanning = False
@@ -96,8 +96,8 @@ class Scanner:
         else:
             yield []
 
-    # Strips a function of its types.
-    def StripFunction(self, func):
+    # Strips a line of its types.
+    def StripTypes(self, func):
         stripedFunc = func
 
         for type in self.types:
