@@ -1571,6 +1571,8 @@ Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noF
 
 Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   InitPID(); // Resets PID. Called by InitCustomLibrary() automatically. 
 
+Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetK(kP, kI, kD); // Sets kP, kI, and kD. Used to tune the PID. 
+
 Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   PID(); // Passively PID's chassis motors. Needs to be started to take effect. 
 
 Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   PIDCalculate(encoderValue, target, PIDInfo* info ); // Calculate the motor speed of a motor given its encoder and information. 
@@ -1603,7 +1605,7 @@ Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRes
 
 Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetRightEncoder(port); // Set the sensor port of the right encoder. Needed for PID controller to function properly. 
 
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetControllerSpeed(speed); // Set the maximum speed of the robot. Only applies to motors that have been slewed. 
+Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetMaxSpeed(speed); // Set the maximum speed of any slewed motor [0...1]. PID, Slew, and regular controllers automatically use slewed. 
 
 Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetAverageDelay(delayTime); // Set the delay of each task in this library. Prevents the Cortex from heating up too much. 
 
@@ -1617,7 +1619,7 @@ Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatR
 
 Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetDelay(); // Returns the delay for all the library's tasks. 
 
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetControllerSpeed(); // Returns the maximum slew speed of the robot. 
+Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetMaxSpeed(); // Returns the maximum slew speed of the robot. 
 
 Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   ResetEncoders(); // Reset chassis' encoder's value to zero. Useful for preventing integer overflow. 
 
@@ -1627,9 +1629,9 @@ Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatR
 
 Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SlewStep(original, step, target); // "Steps" towards a value if the target's value's is faster  than the original. Used for slew controller. 
 
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   HasReached(encoderPort, value); // Tells you whether or not an encoder has reached a threshold. 
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   HasReached(encoderPort, value, range); // Tells you whether or not an encoder has reached an absolute threshold. 
 
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   BothHasReached(encoder1, encoder2, value); // Tells you whether or not two encoders have reached a threshold. Used by PID controller. 
+Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   BothHasReached(encoder1, encoder2, value, range); // Tells you whether or not two encoders have reached an absolute threshold. 
 
 Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   InitCustomLibrary(); // Initializes the library. Should be called BEFORE anything else. 
 
