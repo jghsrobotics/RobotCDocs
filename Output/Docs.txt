@@ -2,3 +2,5 @@ Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,
 
 Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   testVariable; // A very cool variable! 
 
+Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Init(); // Very important setup function. 
+
