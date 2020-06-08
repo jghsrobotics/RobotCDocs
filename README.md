@@ -74,9 +74,9 @@ __Example__:
     C:\Program Files (x86)\Robomatter Inc\ROBOTC Development Environment 4.X\Includes
 
 
-* Library Name - The name of the custom library you want. All documentation will be inside it.
-* Where to look for files - A directory that contains header (.h) files. These files can be inside folders, if needed, and will be scanned for documentation.
-* Where to find BuiltInVariables.txt - The program folder of RobotC that contains `BuiltInVariables.txt`. This is needed to instantly write documentation down after RobotCDocs finishes.
+* __Library Name__ - The name of the custom library you want. All documentation will be inside it.
+* __Where to look for files__ - A directory that contains header (.h) files. These files can be inside folders, if needed, and will be scanned for documentation.
+* __Where to find BuiltInVariables.txt__ - The program folder of RobotC that contains `BuiltInVariables.txt`. This is needed to instantly write documentation down after RobotCDocs finishes.
 
 
 
