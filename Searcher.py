@@ -6,10 +6,9 @@ from Scanner import *
 
     Traverses a root directory to scan all RobotC files.
 """
-
 class Searcher:
-    def __init__(self):
-        self.rootDirectory = r"C:\Users\smart\Desktop\RobotCLibrary"
+    def __init__(self, rootDirectory):
+        self.rootDirectory = rootDirectory
 
     def ListRobotCFiles(self, directory):
         files = os.listdir(directory)

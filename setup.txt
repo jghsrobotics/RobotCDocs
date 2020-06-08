@@ -1,0 +1,5 @@
+> Library Name
+Diego's Custom Library
+
+> Where to look for files
+C:\Users\smart\Desktop\FooDocs

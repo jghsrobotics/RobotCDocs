@@ -1,10 +1,14 @@
 from Writer import *
 from Searcher import *
+from SettingParser import *
 
-writer = Writer()
+parser = SettingParser("setup.txt")
+parser.ParseFile()
+
+writer = Writer(parser.libraryName)
 
 if writer.canWrite:
-    searcher = Searcher()
+    searcher = Searcher(parser.rootDirectory)
 
     for file in searcher.ListRobotCFiles(searcher.rootDirectory):
         scanner = Scanner(file)

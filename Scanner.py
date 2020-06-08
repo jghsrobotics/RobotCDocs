@@ -1,42 +1,38 @@
+from HelperFunctions import *
+
+
 """
     Scanner.py
 
-    Scans RobotC Files for comments.
+    Scans a RobotC file for comments.
 """
-
 class Scanner:
     def __init__(self, fileName):
-        self.canScan = True
-        self.file = self.OpenFileSafely(fileName, "r")
+        self.file = OpenFileSafely(fileName, "r", True)
         self.lines = []
         self.types = [
             "tMotor ",
             "tSensors ",
             "int ",
             "float ",
+            "long "
             "double ",
             "PIDInfo ",
             "short ",
             "bool ",
-            ";",
+            ';',
             "task ",
             "ubyte ",
             "byte ",
             "void "
         ]
 
+        self.canScan = self.file is not None
+
         if self.canScan:
             self.lines = self.file.readlines()
 
-    # Opens a file safely.
-    def OpenFileSafely(self, fileName, mode):
-        try:
-            return open(fileName, mode)
-        except:
-            print(fileName + " wasn't found for scanning. File will not scanned.")
-            self.canScan = False
-            return None
-
+    # Gets the name of the group.
     def GetHeader(self):
         if self.canScan:
             scanning = False
