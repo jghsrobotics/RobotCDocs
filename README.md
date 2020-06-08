@@ -3,6 +3,7 @@
 RobotCDocs is a tool developed for the purpose of attaching descriptions to user-defined functions in RobotC. 
 
 ## What it can do
+### Scan / Parse Files
 RobotCDocs recursively searches for any header files in a directory. Each individual header file will be scanned for comments detailing an instantiation of a function or variable, like so:
 
     FooLibrary / Foo.h - 
@@ -20,6 +21,7 @@ RobotCDocs recursively searches for any header files in a directory. Each indivi
 
 ![Preview Image](/Images/Foo_Image.png)
 
+### Flag Setup Functions / Variables
 Have setup functions or variables? By simply typing ```[SETUP]``` in any comment, the function or variable will be listed under ```Setup```. 
 
 
@@ -42,9 +44,9 @@ RobotCDocs allows you to add descriptions to any function or variable by writing
 
 
 ## How to use
-
 Using RobotCDocs is as easy as editing ```setup.txt``` and running ```main.py```.
 
+### Editing setup.txt
 In ```setup.txt```, you have to write your desired library name and a directory to be scanned:
 
     setup.txt - 
