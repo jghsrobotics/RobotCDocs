@@ -1,74 +1,8 @@
-Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   LeftArcadeControl(); // Arcade control with the left joystick. Supports slewing motors. 
+Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Foo(); // This function does some really cool stuff! This sentence will be added to the ladder. 
 
-Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   RightArcadeControl(); // Arcade control with the right joystick. Supports slewing motors. 
+Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Foo(parameter); // This function does some really cool stuff! This sentence will be added to the ladder. 
 
-Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   CustomTankControl(); // Tank control with slewing support. 
+Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Foo(parameter = 30); // This function does some really cool stuff! This sentence will be added to the ladder. 
 
-Diego's Custom Library,  Controllers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GamerControl(); // Control the chassis like a video game car! Supports slewing motors. 
-
-Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   InitPID(); // Resets PID. Called by InitCustomLibrary() automatically. 
-
-Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetK(kP, kI, kD); // Sets kP, kI, and kD. Used to tune the PID. 
-
-Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   PID(); // Passively PID's chassis motors. Needs to be started to take effect. 
-
-Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   PIDCalculate(encoderValue, target, PIDInfo* info ); // Calculate the motor speed of a motor given its encoder and information. 
-
-Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetPIDTarget(MOTOR side, targetValue); // Sets the target value of the left and right motors used in PID. 
-
-Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   AllowPID(active); // Allows the chassis to be controlled by PID. Motors and encoders most be defined beforehand in Setup. By default, the chassis aren't controlled by PID. 
-
-Diego's Custom Library,  PID,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   CanPID(); // Returns whether or not the chassis is being controlled by PID or not. 
-
-Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   InitSlew(); // Initialize slew controller variables. Called by InitCustomLibrary() automatically. 
-
-Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Slew(); // Passively slews motors. Needs to be started to take effect. 
-
-Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetSlewStep(step); // Slew step is the maximum difference in motor value allowed before slewing. This sets the slew step of the slew controller. By default, slew step is set to 0. Slewing affected by SetTaskDelay(). 
-
-Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetSlewStep(); // Get the slew step of the slew controller. 
-
-Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetMotorSlew(port, speed); // Set the slew value of a motor. This value will be slowly approached by the slew controller if enabled. 
-
-Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   AllowSlew(port, active); // Allows a motor port to slew. By default, all motors aren't slewed. 
-
-Diego's Custom Library,  Slew,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   CanSlew(port); // Returns whether or not a motor is being slewed or not. 
-
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetLeftMotor(port); // Set the motor port of the left motor. Needed for library to function properly. 
-
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetRightMotor(port); // Set the motor port of the right motor. Needed for library to function properly. 
-
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetLeftEncoder(port); // Set the sensor port of the left encoder. Needed for PID controller to function properly. 
-
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetRightEncoder(port); // Set the sensor port of the right encoder. Needed for PID controller to function properly. 
-
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetMaxSpeed(speed); // Set the maximum speed of any slewed motor [0...1]. PID, Slew, and regular controllers automatically use slewed. 
-
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SetAverageDelay(delayTime); // Set the delay of each task in this library. Prevents the Cortex from heating up too much. 
-
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetLeftMotor(); // Returns the motor port of the left motor. 
-
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetRightMotor(); // Returns the motor port of the right motor. 
-
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetLeftEncoder(); // Returns the sensor port of the left encoder. 
-
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetRightEncoder(); // Returns the sensor port of the right encoder. 
-
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   GetDelay(); // Returns the delay for all the library's tasks. 
-
-Diego's Custom Library,  Globals,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   double GetMaxSpeed(); // Returns the maximum slew speed of the robot. 
-
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   ResetEncoders(); // Reset chassis' encoder's value to zero. Useful for preventing integer overflow. 
-
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Clamp(value); // Clamps values down to -127 and 127. Used for motor speed. 
-
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Step(original, step, target); // "Steps" towards a value by a maximum amount. 
-
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   SlewStep(original, step, target); // "Steps" towards a value if the target's value's is faster  than the original. Used for slew controller. 
-
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   HasReached(encoderPort, value, range); // Tells you whether or not an encoder has reached an absolute threshold. 
-
-Diego's Custom Library,  Helpers,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   BothHasReached(encoder1, encoder2, value, range); // Tells you whether or not two encoders have reached an absolute threshold. 
-
-Diego's Custom Library,  Setup,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   InitCustomLibrary(); // Initializes the library. Should be called BEFORE anything else. 
+Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   testVariable; // A very cool variable! 
 
