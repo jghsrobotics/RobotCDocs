@@ -53,6 +53,9 @@ In ```setup.txt```, you have to write your desired library name and a directory 
 
     > Where to look for files
     [Path to folder containing header files]
+    
+    > Where to find BuiltInVariables.txt
+    [Path to RobotC folder containing BuiltInVariables.txt]
 
 
 __Example__:
@@ -63,8 +66,10 @@ __Example__:
     Diego's Custom Library
 
     > Where to look for files
-    [Path to folder containing header files] C:\Users\user\Desktop\FooDocs
+    C:\Users\user\Desktop\FooDocs
 
+    > Where to find BuiltInVariables.txt
+    C:\Program Files (x86)\Robomatter Inc\ROBOTC Development Environment 4.X\Includes
 
 
 
