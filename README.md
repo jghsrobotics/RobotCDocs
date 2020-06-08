@@ -4,7 +4,7 @@ RobotCDocs is a tool developed for the purpose of attaching descriptions to user
 
 ## What it can do
 ### Scan / Parse Files
-RobotCDocs recursively searches for any header files in a directory. Each individual header file will be scanned for comments detailing an instantiation of a function or variable, like so:
+RobotCDocs recursively searches for any header files in a directory. Each individual header file will be scanned for comments detailing a declaration of a function or variable, like so:
 
     FooLibrary / Foo.h - 
 
@@ -80,8 +80,36 @@ __Example__:
 
 
 ### Running main.py
-RobotCDocs has only been tested on Windows 10, and was written with python 3.7. To run in the console, simply type `python main.py` inside the root directory (assuming you installed python on your PATH.
+RobotCDocs has only been tested on Windows 10, and was written with python 3.7. To run in the console, simply type `python main.py` inside the root directory (assuming you installed python on your PATH). If unclear errors appear, be sure to report it in the issue tracker.
 
+
+### Format of Comments
+
+Each header file should have a multi-line comment detailing the contents of the file. This is __required__. The name of the file listed inside it will hold all the functions and declarations
+
+    /*
+     * Foo.h
+     *
+     * Here goes my description!
+    */
+
+As seen above, RobotCDocs only accepts multi-line comments that start each line with an asterisk with a space on each side. These comments should appear right above function or variable declarations.
+
+    /*
+     * Here goes my description!
+    */
+    void NameOfFunction(); // Should be close to comment
+
+If the function should be listed under `Setup`, it should be formatted like so:
+
+    /*
+     * [SETUP]
+     *
+     * Here goes my description!
+    */
+    void NameOfFunction(); // Should be close to comment
+
+[Here](https://github.com/Desperationis/RobotCLibrary/blob/master/Helpers/Helpers.h) is a valid example listed inside RobotCLibrary.
 
 
 
