@@ -7,6 +7,7 @@ class SettingParser(Reader):
 
         self.libraryName = "LibraryNameNotSet"
         self.rootDirectory = "RootDirectoryNotSet"
+        self.outputDirectory = "OutputDirectoryNotSet"
 
     # Parses the file. This is where the magic happens
     def ParseFile(self):
@@ -25,6 +26,9 @@ class SettingParser(Reader):
 
                 if self.currentSetting == 2:
                     self.rootDirectory = currentLine
+
+                if self.currentSetting == 3:
+                    self.outputDirectory = currentLine
 
                 # Proceed to the next line
                 currentLine = self.GetNextLine()

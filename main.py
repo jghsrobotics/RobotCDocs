@@ -5,7 +5,7 @@ from SettingParser import *
 parser = SettingParser("setup.txt")
 parser.ParseFile()
 
-writer = Writer(parser.libraryName)
+writer = Writer(parser.libraryName, parser.outputDirectory)
 
 if writer.canWrite:
     searcher = Searcher(parser.rootDirectory)
