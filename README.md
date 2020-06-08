@@ -15,10 +15,16 @@ RobotCDocs recursively searches for any header files in a directory. Each indivi
     void Foo();
 
     /*
+     * This function does some really cool stuff!
+     * This sentence will be added to the ladder.
+    */
+    void Foo(int parameter);
+
+    /*
      * A very cool variable!
     */
     bool testVariable;
-
+   
 ![Preview Image](/Images/Foo_Image.png)
 
 ### Flag Setup Functions / Variables
