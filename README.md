@@ -19,6 +19,55 @@ void Foo();
 */
 bool testVariable;
 ```
+
 Here's how it would look like in the RobotC function library after running RobotCDocs:
 ![Preview Image](/Images/Foo_Image.png)
-Cool Right?
+
+Have setup functions or variables? By simply typing ```[SETUP]``` in any comment, the function or variable will be listed under ```Setup```. 
+
+```
+/*
+ * [SETUP]
+ *
+ * Very important setup function.
+*/
+void Init();
+```
+
+![Preview Image](/Images/Foo_Setup_Image.png)
+
+## How to use
+
+Using RobotCDocs is as easy as editing ```setup.txt``` and running ```main.py```.
+
+In ```setup.txt```, you have to write your desired library name and a directory to be scanned:
+```
+setup.txt - 
+> Library Name
+[Desired Library Name]
+
+> Where to look for files
+[Path to folder containing header files]
+```
+
+__Example__:
+
+```
+setup.txt - 
+
+> Library Name
+Diego's Custom Library
+
+> Where to look for files
+[Path to folder containing header files] C:\Users\user\Desktop\FooDocs
+```
+
+
+
+
+
+
+
+
+
+
