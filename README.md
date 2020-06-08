@@ -18,9 +18,6 @@ RobotCDocs recursively searches for any header files in a root directory. Each i
     */
     bool testVariable;
 
-
-Here's how it would look like in the RobotC function library after running RobotCDocs:
-
 ![Preview Image](/Images/Foo_Image.png)
 
 Have setup functions or variables? By simply typing ```[SETUP]``` in any comment, the function or variable will be listed under ```Setup```. 
