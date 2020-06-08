@@ -79,6 +79,9 @@ __Example__:
 * __Where to find BuiltInVariables.txt__ - The program folder of RobotC that contains `BuiltInVariables.txt`. This is needed to instantly write documentation down after RobotCDocs finishes.
 
 
+### Running main.py
+RobotCDocs has only been tested on Windows 10, and was written with python 3.7. To run in the console, simply type `python main.py` inside the root directory (assuming you installed python on your PATH.
+
 
 
 
