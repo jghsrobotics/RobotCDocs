@@ -38,7 +38,8 @@ RobotCDocs recursively searches for any header files in a directory. Each indivi
 
 ### Flag Setup Functions / Variables
 Have setup functions or variables? By simply typing `[SETUP]` in any comment, the function or variable will be listed under `Setup`. 
-
+    
+    FooLibrary / Foo.h - 
 
     /*
      * [SETUP]
@@ -64,7 +65,6 @@ Using RobotCDocs is as easy as editing `setup.txt` and running `main.py`.
 ### Editing setup.txt
 In `setup.txt`, you have to write your desired library name and a directory to be scanned:
 
-    setup.txt - 
     > Library Name
     [Desired Library Name]
 
@@ -76,8 +76,6 @@ In `setup.txt`, you have to write your desired library name and a directory to b
 
 
 __Example__:
-
-    setup.txt - 
 
     > Library Name
     Diego's Custom Library
