@@ -22,7 +22,7 @@ RobotCDocs recursively searches for any header files in a directory. Each indivi
 ![Preview Image](/Images/Foo_Image.png)
 
 ### Flag Setup Functions / Variables
-Have setup functions or variables? By simply typing ```[SETUP]``` in any comment, the function or variable will be listed under ```Setup```. 
+Have setup functions or variables? By simply typing `[SETUP]` in any comment, the function or variable will be listed under `Setup`. 
 
 
     /*
@@ -36,18 +36,18 @@ Have setup functions or variables? By simply typing ```[SETUP]``` in any comment
 ![Preview Image](/Images/Foo_Setup_Image.png)
 
 ## How it works
-RobotC's function library descriptions are located in a file called ```BuiltInVariables.txt``` that get parsed at runtime. The contents of this file are the functions and variables you see in the function library of RobotC.
+RobotC's function library descriptions are located in a file called `BuiltInVariables.txt` that get parsed at runtime. The contents of this file are the functions and variables you see in the function library of RobotC.
 
-RobotCDocs allows you to add descriptions to any function or variable by writing the definition of it directly into ```BuiltInVariables.txt```. The format of this function definition is similar to CSV. An example is included below. (You won't have to write at all in this dirty format, RobotCDocs does it for you)
+RobotCDocs allows you to add descriptions to any function or variable by writing the definition of it directly into `BuiltInVariables.txt`. The format of this function definition is similar to CSV. An example is included below. (You won't have to write at all in this dirty format, RobotCDocs does it for you)
 
     Battery & Power Control,      Variables,          V2,            feat_NaturalLanguageInActive,           noFeatRest,                   F, A,   BackupBatteryLevel            //Returns the current voltage level of the VEX 
 
 
 ## How to use
-Using RobotCDocs is as easy as editing ```setup.txt``` and running ```main.py```.
+Using RobotCDocs is as easy as editing `setup.txt` and running `main.py`.
 
 ### Editing setup.txt
-In ```setup.txt```, you have to write your desired library name and a directory to be scanned:
+In `setup.txt`, you have to write your desired library name and a directory to be scanned:
 
     setup.txt - 
     > Library Name
@@ -74,7 +74,9 @@ __Example__:
     C:\Program Files (x86)\Robomatter Inc\ROBOTC Development Environment 4.X\Includes
 
 
-
+* Library Name - The name of the custom library you want. All documentation will be inside it.
+* Where to look for files - A directory that contains header (.h) files. These files can be inside folders, if needed, and will be scanned for documentation.
+* Where to find BuiltInVariables.txt - The program folder of RobotC that contains `BuiltInVariables.txt`. This is needed to instantly write documentation down after RobotCDocs finishes.
 
 
 
