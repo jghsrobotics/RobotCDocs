@@ -2,6 +2,14 @@
 ![Preview Image](/Images/Preview_Image.png)
 RobotCDocs is a tool developed for the purpose of attaching descriptions to user-defined functions in RobotC. 
 
+
+# Table of contents
+
+* [What it can do](## What it can do)
+* [How it works](## How it works)
+* [How to use](## How to use)
+
+
 ## What it can do
 ### Scan / Parse Files
 RobotCDocs recursively searches for any header files in a directory. Each individual header file will be scanned for comments detailing a declaration of a function or variable, like so:
