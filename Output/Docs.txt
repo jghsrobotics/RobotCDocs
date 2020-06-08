@@ -1,8 +1,0 @@
-Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Foo(); // This function does some really cool stuff! This sentence will be added to the ladder. 
-
-Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Foo(parameter); // This function does some really cool stuff! This sentence will be added to the ladder. 
-
-Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   Foo(parameter = 30); // This function does some really cool stuff! This sentence will be added to the ladder. 
-
-Diego's Custom Library,  Foo,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   testVariable; // A very cool variable! 
-
