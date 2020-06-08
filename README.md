@@ -1,9 +1,9 @@
 # RobotCDocs
-RobotCDocs is a tool developed for the purpose of attaching descriptions to user-defined functions in RobotC. 
 ![Preview Image](/Images/Preview_Image.png)
+RobotCDocs is a tool developed for the purpose of attaching descriptions to user-defined functions in RobotC. 
 
 ## What it can do
-RobotCDocs recursively searches for any header files in a root directory. Each individual header file will be scanned for comments detailing an instantiation of a function or variable, like so:
+RobotCDocs recursively searches for any header files in a directory. Each individual header file will be scanned for comments detailing an instantiation of a function or variable, like so:
 
     FooLibrary / Foo.h - 
 
@@ -32,6 +32,14 @@ Have setup functions or variables? By simply typing ```[SETUP]``` in any comment
 
 
 ![Preview Image](/Images/Foo_Setup_Image.png)
+
+## How it works
+RobotC's function library descriptions are located in a file called ```BuiltInVariables.txt``` that get parsed at runtime. The contents of this file are the functions and variables you see in the function library of RobotC.
+
+RobotCDocs allows you to add descriptions to any function or variable by writing the definition of it directly into ```BuiltInVariables.txt```. The format of this function definition is similar to CSV. An example is included below. (You won't have to write at all in this dirty format, RobotCDocs does it for you)
+
+    Battery & Power Control,      Variables,          V2,            feat_NaturalLanguageInActive,           noFeatRest,                   F, A,   BackupBatteryLevel            //Returns the current voltage level of the VEX 
+
 
 ## How to use
 
