@@ -5,9 +5,9 @@ RobotCDocs is a tool developed for the purpose of attaching descriptions to user
 
 # Table of contents
 
-* [What it can do](## What it can do)
-* [How it works](## How it works)
-* [How to use](## How to use)
+* [What it can do](##what-it-can-do)
+* [How it works](##how-it-works)
+* [How to use](##how-to-use)
 
 
 ## What it can do
