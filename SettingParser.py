@@ -1,4 +1,4 @@
-from Reader import *
+from PythonFileLibrary.Reader import *
 
 class SettingParser(Reader):
     def __init__(self, setupFileName):

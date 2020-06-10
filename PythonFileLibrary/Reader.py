@@ -1,4 +1,4 @@
-from HelperFunctions import *
+from PythonFileLibrary.HelperFunctions import *
 
 """
     Reader.py
