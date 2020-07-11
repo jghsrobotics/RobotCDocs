@@ -35,12 +35,12 @@ class SettingParser(Reader):
             currentSetting += 1
 
             if currentSetting == 1:
-                self.libraryName = self.GetNextLine()
+                self.libraryName = self.GetNextLine().strip()
 
             if currentSetting == 2:
-                self.libraryDirectory = self.GetNextLine()
+                self.libraryDirectory = self.GetNextLine().strip()
 
             if currentSetting == 3:
-                self.outputDirectory = self.GetNextLine()
+                self.outputDirectory = self.GetNextLine().strip()
 
         self.ResetReader()

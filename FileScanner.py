@@ -5,6 +5,7 @@ class FileScanner(Reader):
         super().__init__(file)
 
         self.categoryName = self.fileName.split('.')[0]
+        self.docs = []
 
         try:
             self.Parse()
@@ -35,7 +36,6 @@ class FileScanner(Reader):
     def Parse(self):
         assert self.canParse, "FileScanner.py: Could not open %s." % (self.fileName)
 
-        docs = []
         content = ""
         for line in self.GetComments():
 
@@ -48,8 +48,5 @@ class FileScanner(Reader):
                     content += ' '
 
             if '*/' in line:
-                docs.append([self.GetNextLine(), content])
+                self.docs.append([self.GetNextLine().strip().replace(" ", "_", 1), content])
                 content = ""
-
-        for i in docs:
-            print(i)
