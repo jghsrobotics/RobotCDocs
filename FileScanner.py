@@ -9,7 +9,7 @@ class FileScanner(Reader):
     def __init__(self, file):
         super().__init__(file)
 
-        self.categoryName = self.fileName.split('.')[0]
+        self.categoryName = self.fileName.split('\\')[-1].split('.')[0]
         self.docs = []
 
         try:
@@ -53,5 +53,7 @@ class FileScanner(Reader):
                     content += ' '
 
             if '*/' in line:
-                self.docs.append([self.GetNextLine().strip().replace(" ", "_", 1), content])
+                function = self.GetNextLine().strip()
+                if ';' in function:
+                    self.docs.append([function, content])
                 content = ""

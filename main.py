@@ -1,9 +1,12 @@
 from SettingParser import *
 from FileScanner import *
+from RecursiveScanner import *
 from Writer import *
 
 settingParser = SettingParser()
-fileScanner = FileScanner("Helpers.h")
+recursiveScanner = RecursiveScanner(settingParser)
 
 writer = Writer(settingParser)
-writer.WriteDownFile(fileScanner)
+
+for file in recursiveScanner.files:
+    writer.WriteDownFile(file)

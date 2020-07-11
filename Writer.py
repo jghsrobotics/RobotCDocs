@@ -1,4 +1,5 @@
 from PythonFileLibrary.HelperFunctions import *
+from CommentFilter import *
 
 """
     Writer.py
@@ -10,7 +11,7 @@ class Writer:
     def __init__(self, settingParser):
         self.libraryName = settingParser.libraryName
         self.outputDirectory = settingParser.outputDirectory
-        self.template = "%s,  %s,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   %s // %s"
+        self.docTemplate = "%s,  %s,  V2,  feat_NaturalLanguageInActive,    noFeatRest,       F, B,   %s // %s"
 
         self.inputFile = OpenFileSafely('Input/BuiltInVariables.txt', 'r', True)
         self.canParse = self.inputFile is not None
@@ -27,9 +28,11 @@ class Writer:
         self.outputFile.write("\n")
 
     def WriteDownFile(self, fileScanner):
-        for doc in fileScanner.docs:
+        commentFilter = CommentFilter()
 
-            functionDoc = self.template % (self.libraryName, fileScanner.categoryName, doc[0], doc[1])
+        for doc in fileScanner.docs:
+            commentFilter.FilterDoc(doc)
+            functionDoc = self.docTemplate % (self.libraryName, fileScanner.categoryName, doc[0], doc[1])
 
             self.outputFile.write(functionDoc + "\n")
             self.outputFile.write("\n")
