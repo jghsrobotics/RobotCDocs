@@ -3,7 +3,8 @@ from PythonFileLibrary.Reader import *
 """
     SettingParser.py
 
-    Parses setup.txt.
+    Parses setup.txt for library name, the directory of the files you want to scan, and
+    the output directory of BuiltInVariables.txt.
 """
 class SettingParser(Reader):
     def __init__(self):

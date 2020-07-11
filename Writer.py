@@ -1,6 +1,11 @@
 from PythonFileLibrary.HelperFunctions import *
 
+"""
+    Writer.py
 
+    Writes down the documentation of each file. Exports documentation as
+    BuiltInVariables.txt.
+"""
 class Writer:
     def __init__(self, settingParser):
         self.libraryName = settingParser.libraryName

@@ -1,5 +1,10 @@
 from PythonFileLibrary.Reader import *
 
+"""
+    FileScanner.py
+
+    Scans a file for JSDoc-like documentation.
+"""
 class FileScanner(Reader):
     def __init__(self, file):
         super().__init__(file)
