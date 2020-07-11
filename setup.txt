@@ -4,5 +4,5 @@ Diego's Custom Library
 > Where to look for files
 C:\Users\smart\Desktop\RobotCLibrary
 
-> Where to find BuiltInVariables.txt
-C:\Program Files (x86)\Robomatter Inc\ROBOTC Development Environment 4.X\Includes
+> Where to output BuiltInVariables.txt
+Output/

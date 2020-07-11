@@ -23,7 +23,7 @@ class SettingParser(Reader):
     def GetSettings(self):
         for line in self.CleanRead():
             if '>' in line:
-                yield line
+                yield line.strip()
 
     # Parse setup.txt. Will throw an AssertionError if the
     # file cannot be read.
@@ -42,3 +42,5 @@ class SettingParser(Reader):
 
             if currentSetting == 3:
                 self.outputDirectory = self.GetNextLine()
+
+        self.ResetReader()
