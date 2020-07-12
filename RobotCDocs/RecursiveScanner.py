@@ -1,5 +1,5 @@
+import PythonFileLibrary.RecursiveScanner
 from FileScanner import *
-import os
 
 """
     RecursiveScanner.py
@@ -7,20 +7,14 @@ import os
     Recursively scans a root directory for leaf nodes and
     creates a FileScanner object for each of them.
 """
-class RecursiveScanner:
+class RecursiveScanner(PythonFileLibrary.RecursiveScanner.RecursiveScanner):
     def __init__(self, settingParser):
-        self.files = []
-        self.whitelist = ['.c', '.h']
-        self.Scan(settingParser.libraryDirectory)
+        super().__init__(settingParser.libraryDirectory, ['.c', '.h'])
+        self.scanners = [];
 
-    def Scan(self, directory):
-        for obj in os.listdir(directory):
+        self.ParseFiles()
+
+    def ParseFiles(self):
+        for path in self.files:
             # If it's a folder, keep searching.
-            if '.' not in obj:
-                self.Scan(os.path.join(directory, obj))
-
-            else:
-                # If it's a file in our whitelist, make a FileScanner for it
-                for item in self.whitelist:
-                    if item in obj:
-                        self.files.append(FileScanner(os.path.join(directory, obj)))
+            self.scanners.append(FileScanner(path))

@@ -11,5 +11,5 @@ recursiveScanner = RecursiveScanner(settingParser)
 
 # Write down the information gathered by recursiveScanner into BuiltInVariables.txt
 writer = Writer(settingParser)
-for file in recursiveScanner.files:
-    writer.WriteDownFile(file)
+for scanner in recursiveScanner.scanners:
+    writer.WriteDownFile(scanner)
