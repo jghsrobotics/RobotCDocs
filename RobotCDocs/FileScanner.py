@@ -52,16 +52,21 @@ class FileScanner(Reader):
         doc.category = self.categoryName
         for line in self.GetComments():
 
-            if self.StrAtIndex(line, ' * ', 0):
+            if self.StrAtIndex(line, ' *', 0):
                 line = line.replace(' * ', "")
+                line = line.replace(' *', "")
 
                 # Join sentences together to make one long string.
                 doc.description += line
 
-                # If the line doesn't have a space at the end,
+                # If a sentence doesn't have a space at the end,
                 # add it to preserve grammar.
-                if line[-1] != ' ':
-                    doc.description += ' '
+                if len(line) > 0:
+                    if line[-1] != ' ':
+                        doc.description += ' '
+
+            elif '/*' not in line and '*/' not in line:
+                print('FileScanner.py: Warning: Line %s of %s is missing a \' *\'' % (self.currentLine - 1, self.fileName))
 
             if '@' in line:
 
@@ -70,7 +75,6 @@ class FileScanner(Reader):
                 for word in words:
                     if '@' in word:
                         doc.category = word.split('@')[-1].capitalize()
-                        print(doc.category)
                         break
 
 
@@ -79,6 +83,8 @@ class FileScanner(Reader):
                 doc.declaration = self.GetNextLine().strip()
                 if ';' in doc.declaration:
                     self.docs.append(doc)
+                else:
+                    print('FileScanner.py: Warning: Line %s of %s was skipped due to missing a declaration.' % (self.currentLine - 1, self.fileName))
 
                 doc = Doc()
                 doc.category = self.categoryName
