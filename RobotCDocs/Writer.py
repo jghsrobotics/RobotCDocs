@@ -32,7 +32,7 @@ class Writer:
 
         for doc in fileScanner.docs:
             commentFilter.FilterDoc(doc)
-            functionDoc = self.docTemplate % (self.libraryName, fileScanner.categoryName, doc[0], doc[1])
+            functionDoc = self.docTemplate % (self.libraryName, doc.category, doc.declaration, doc.description)
 
             self.outputFile.write(functionDoc + "\n")
             self.outputFile.write("\n")

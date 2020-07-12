@@ -15,9 +15,12 @@ class RecursiveScanner:
 
     def Scan(self, directory):
         for obj in os.listdir(directory):
-            for item in self.whitelist:
-                if item in obj:
-                    self.files.append(FileScanner(os.path.join(directory, obj)))
-
+            # If it's a folder, keep searching.
             if '.' not in obj:
                 self.Scan(os.path.join(directory, obj))
+
+            else:
+                # If it's a file in our whitelist, make a FileScanner for it
+                for item in self.whitelist:
+                    if item in obj:
+                        self.files.append(FileScanner(os.path.join(directory, obj)))

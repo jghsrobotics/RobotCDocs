@@ -9,6 +9,8 @@ class CommentFilter:
     def __init__(self):
         self.types = [
             "short",
+            "unsigned",
+            "long",
             "int",
             "float",
             "double",
@@ -17,17 +19,17 @@ class CommentFilter:
             "void",
             "ubyte",
             "tMotor",
-            "tSensor",
+            "tSensors",
             "bool",
             "PIDInfo"
         ]
 
     def FilterDoc(self, doc):
-        functionStr = doc[0]
+        functionStr = doc.declaration
 
         # ROBOTC hates types defined in its documentation. Remove ALL OF IT!
         for type in self.types:
             functionStr = functionStr.replace(type + '* ', "")
             functionStr = functionStr.replace(type + ' ', "")
 
-        doc[0] = functionStr
+        doc.declaration = functionStr
