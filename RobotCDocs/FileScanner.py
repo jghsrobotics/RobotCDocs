@@ -10,9 +10,11 @@ class FileScanner(Reader):
     def __init__(self, file):
         super().__init__(file)
 
-        # Given a directory (E.x. \Desktop\File.h), only save
-        # the name of the file (E.x. "File")
-        self.categoryName = self.fileName.split('\\')[-1].split('.')[0]
+        # Given a directory (E.x. \Desktop\File.h), only save the actual file name (File.h)
+        self.docFileName = self.fileName.split('\\')[-1]
+
+        # The name of the file (E.x. "File")
+        self.categoryName = self.docFileName.split('.')[0]
         self.docs = []
 
         try:
@@ -56,6 +58,15 @@ class FileScanner(Reader):
                 line = line.replace(' * ', "")
                 line = line.replace(' *', "")
 
+                if '@' in line:
+
+                    # Split the line into words, then get the name of the category.
+                    words = line.split(' ')
+                    for word in words:
+                        if '@' in word:
+                            doc.category = word.split('@')[-1].capitalize()
+                            break
+
                 # Join sentences together to make one long string.
                 doc.description += line
 
@@ -66,16 +77,8 @@ class FileScanner(Reader):
                         doc.description += ' '
 
             elif '/*' not in line and '*/' not in line:
-                print('FileScanner.py: Warning: Line %s of %s is missing a \' *\'' % (self.currentLine - 1, self.fileName))
+                print('FileScanner.py: Warning: Line %s of %s is missing a \' *\'; Line will be skipped.' % (self.currentLine + 1, self.docFileName))
 
-            if '@' in line:
-
-                # Split the line into words, then get the name of the category.
-                words = line.split(' ')
-                for word in words:
-                    if '@' in word:
-                        doc.category = word.split('@')[-1].capitalize()
-                        break
 
 
             if '*/' in line:
@@ -84,7 +87,7 @@ class FileScanner(Reader):
                 if ';' in doc.declaration:
                     self.docs.append(doc)
                 else:
-                    print('FileScanner.py: Warning: Line %s of %s was skipped due to missing a declaration.' % (self.currentLine - 1, self.fileName))
+                    print('FileScanner.py: Warning: Line %s of %s was skipped due to missing a declaration.' % (self.currentLine + 1, self.docFileName))
 
                 doc = Doc()
                 doc.category = self.categoryName
