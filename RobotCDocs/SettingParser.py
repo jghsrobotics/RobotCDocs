@@ -1,4 +1,4 @@
-from PythonFileLibrary.Reader import *
+import PythonFileLibrary.SettingParser
 
 """
     SettingParser.py
@@ -6,9 +6,9 @@ from PythonFileLibrary.Reader import *
     Parses setup.txt for library name, the directory of the files you want to scan, and
     the output directory of BuiltInVariables.txt.
 """
-class SettingParser(Reader):
+class SettingParser(PythonFileLibrary.SettingParser.SettingParser):
     def __init__(self):
-        super().__init__("setup.txt")
+        super().__init__()
         self.libraryName = ""
         self.libraryDirectory = ""
         self.outputDirectory = ""
@@ -17,14 +17,6 @@ class SettingParser(Reader):
             self.Parse()
         except AssertionError as error:
             print(error)
-
-    # Yield lines that have '>' in them. The file
-    # can still be read normally using self.GetNextLine()
-    # or self.SkipLine(n)
-    def GetSettings(self):
-        for line in self.CleanRead():
-            if '>' in line:
-                yield line.strip()
 
     # Parse setup.txt. Will throw an AssertionError if the
     # file cannot be read.
