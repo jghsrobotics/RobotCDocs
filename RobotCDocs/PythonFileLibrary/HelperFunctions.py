@@ -31,8 +31,8 @@ def OneIs(objects, value):
 
     return False
 
-
-def RemoveElements(elements, line):
+# Given an array of strings, remove instances of them from a string. 
+def RemoveElements(line, elements):
     for element in elements:
         line = line.replace(element, "")
     return line
