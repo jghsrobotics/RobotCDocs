@@ -24,9 +24,12 @@ class RecursiveScanner:
 
     def Scan(self, directory):
         for obj in os.listdir(directory):
-            # If it's a folder, keep searching.
+            # If it's a folder, keep searching. If it's a weird file, skip it.
             if '.' not in obj:
-                self.Scan(os.path.join(directory, obj))
+                try:
+                    self.Scan(os.path.join(directory, obj))
+                except:
+                    pass
 
             else:
                 # If it's a file in our whitelist, make a FileScanner for it
