@@ -13,7 +13,7 @@ RobotCDocs is a tool developed for the purpose of attaching descriptions to user
 
 ## What it can do
 ### Scan / Parse Files
-RobotCDocs recursively searches for any header (.h) or source (.c) files in a directory. Each individual header file will be scanned for comments detailing a declaration of a function or variable, like so:
+RobotCDocs recursively searches for any header (.h) or source (.c) files in a directory. Each file will be scanned for comments detailing a _declaration_ of a function or variable, like so:
 
     FooLibrary / Foo.h - 
 
@@ -128,9 +128,6 @@ Like previously mentioned, declarations with a custom category should have the n
      * Here goes my description!
     */
     void NameOfFunction(); // Should be close to comment
-
-[Here](https://github.com/Desperationis/RobotCLibrary/blob/master/Helpers/Helpers.h) is a valid example listed inside RobotCLibrary.
-
 
 
 
