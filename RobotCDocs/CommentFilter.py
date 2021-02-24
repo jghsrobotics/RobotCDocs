@@ -8,7 +8,7 @@
 
 class CommentFilter:
     def __init__(self):
-        self.filter = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM*&"
+        self.filter = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM*&_1234567890"
         pass
 
     def removeType(self, line, index = 2) -> str:
