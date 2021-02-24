@@ -13,7 +13,7 @@ RobotCDocs is a tool developed for the purpose of attaching descriptions to user
 
 ## What it can do
 ### Scan / Parse Files
-RobotCDocs recursively searches for any header (.h) or source (.c) files in a directory. Each file will be scanned for comments detailing a _declaration_ of a function or variable, like so:
+RobotCDocs recursively searches for any header (.h) or source (.c) files in a directory. Each file will be scanned for comments detailing a _declaration_ or _definition_ of a function or variable, like so:
 
     FooLibrary / Foo.h - 
 
@@ -21,7 +21,9 @@ RobotCDocs recursively searches for any header (.h) or source (.c) files in a di
      * This function does some really cool stuff!
      * This sentence will be added to the ladder.
     */
-    void Foo();
+    void Foo() {
+        ... code ...
+    }
 
     /*
      * This function does some really cool stuff!
@@ -33,11 +35,16 @@ RobotCDocs recursively searches for any header (.h) or source (.c) files in a di
      * A very cool variable!
     */
     bool testVariable;
+
+    /*
+     * The second cool variable!
+    */
+    bool testVariable2 = false; // Will not look nice; Initialization is not supported.
    
 ![Preview Image](/Images/Foo_Image.png)
 
 ### Custom Naming Schemes
-By default, the documentation of a declaration will be listed under its file's name. This is seen in the above example, where Foo(parameter) is listed under the _Foo_ category. You can change the category of a declaration with the addition of `@`. In the code below, the addition of `@setup` means that the declaration will be listed under _Setup_, no matter what file it's in. As you can see, `setup` is automatically capitalized to `Setup`.
+By default, the documentation of a function or variable will be listed under its file's name. This is seen in the above example, where Foo(parameter) is listed under the _Foo_ category. You can change the category of a function or variable with the addition of `@`. In the code below, the addition of `@setup` means that the declaration will be listed under _Setup_, no matter what file it's in. As you can see, `setup` is automatically capitalized to `Setup`.
     
     FooLibrary / Foo.h - 
 

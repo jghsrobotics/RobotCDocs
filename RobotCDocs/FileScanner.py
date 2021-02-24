@@ -82,12 +82,13 @@ class FileScanner(Reader):
 
 
             if '*/' in line:
-                # Check that the comment was right before a function or variable declaration.
+                # Check that the comment was right before a function or variable declaration or definition.
                 doc.declaration = self.GetNextLine().strip()
-                if ';' in doc.declaration:
+                if ';' in doc.declaration or '{' in doc.declaration:
+                    doc.declaration = doc.declaration.replace(";", "").replace("{", "")
                     self.docs.append(doc)
                 else:
-                    print('FileScanner.py: Warning: Line %s of %s was skipped due to missing a declaration.' % (self.currentLine + 1, self.docFileName))
+                    print('FileScanner.py: Warning: Line %s of %s was skipped due to missing a declaration or definition.' % (self.currentLine + 1, self.docFileName))
 
                 doc = Doc()
                 doc.category = self.categoryName
